@@ -1,4 +1,11 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.content %></p>
-<%= link_to "Edit", edit_post_path(@post) %>
-<%= link_to "Delete", @post, method: :delete, data: { confirm: "Are you sure?" } %> 
+
+<div class="card post-card">
+	<%=image_tag("bridge.jpg", class: "card-img-top") %>
+ 	<h2 class="card-title"><%= @post.title %></h2>
+  <div class="card-body">
+		<p class="card-text"><%= @post.content %></p>
+		<%= link_to "Back to Overview", posts_path, class: "btn btn-primary" %>
+		<%= link_to "Edit", edit_post_path(@post), class: "btn btn-warning" %>
+		<%= link_to "Delete", @post, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %>  
+	</div>
+</div>
